@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <title>Particle Web</title>
+    <style>
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        background-image: url('');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <script src="{{ url_for('static', filename='particles.js') }}"></script>
+    <script>
+      particlesJS.load('particles-js', '{{ url_for('static', filename='particles.json') }}', function () {
+        console.log('particles.json loaded!');
+      });
+    </script>
+  </body>
+</html>
